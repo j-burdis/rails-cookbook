@@ -1,3 +1,33 @@
-<h4>Recipe categories</h4>
+<div class='navbar'>
+	<div id='emoji'>
+	<%= "🧑🏻‍🍳" %>
+	</div>
+	<div>
+		<%= link_to "My categories", categories_path %>
+		<%= link_to "New categories", new_category_path %>
+	</div>
+</div>
 
-<p><p>
+<div class="banner-home">
+  All your recipes in one place 🍝
+</div>
+
+<div class='container'>
+  <h4>Categories</h4>
+
+  <div class='row content'>
+    <div class='col-9'>
+      <div class="cards">
+        <% @categories.each do |category| %>
+          <div class="card-category" style="background-image: url(<%= asset_path('thoughtful-ainsley.jpg') %>)">
+            <%= link_to category.name, category_path(category) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-3 btn-container">
+      <%= link_to "Create a category", new_category_path, class: 'btn btn-success' %>
+    </div>
+  </div>
+</div>

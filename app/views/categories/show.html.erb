@@ -1,3 +1,55 @@
-<h4>Category name</h4>
+<div class='navbar'>
+	<div id='emoji'>
+	<%= "🧑🏻‍🍳" %>
+	</div>
+	<div>
+		<%= link_to "My categories", categories_path %>
+		<%= link_to "New categories", new_category_path %>
+	</div>
+</div>
 
-<p></p>
+<div class="card-category" style="background-image: url(<%= asset_path('thoughtful-ainsley.jpg') %>)">
+  <%= @category.name %>
+</div>
+
+<div class='container'>
+	<div class='recipe-links'>
+		<%= link_to "Back to categories", categories_path %>
+		<%= link_to "Delete category", category_path(@category), class: 'btn btn-danger',
+      	data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+	</div>
+
+  <div class='row recipe-content'>
+		<div class='col-12'>
+			<div class='recipe-cards'>	
+				<% @category.bookmarks.each do |bookmark| %>
+					<div class='card-recipe'>
+						<%= image_tag bookmark.recipe.image_url %>
+						<div class='recipe-info'>
+							<p><%= bookmark.recipe.name %></p>
+							<p><%= bookmark.recipe.description %></p>
+              <p>Rating: <%= bookmark.recipe.rating %>/10</p>
+						</div>
+						<div class='recipe-extras'>
+							<p> "<%= bookmark.comment %>"</p>
+							<p><%= link_to "Delete", bookmark_path(bookmark), class: 'btn btn-danger',
+									data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+  <div class="row">
+    <h4 class="text-center">Add a recipe</h4>
+    <div class="col-6 mx-auto" style="padding: 24px;">
+      <%= simple_form_for [@category, @bookmark] do |f| %>
+        <%= f.association :recipe %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

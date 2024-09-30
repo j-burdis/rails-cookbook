@@ -1,0 +1,37 @@
+.category-container {
+    h4 {
+      margin: 20px 0;
+      text-align: center;
+    }
+  
+    .row {
+      margin-top: 20px;
+    }
+  
+    .btn-success {
+      padding: 10px 20px;
+      background-color: #28a745;;
+      color: white;
+      border-radius: #ccc;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+  
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  
+    .category-links {
+      display: flex;
+      justify-content: space-between;
+      color: rgb(25, 25, 25);
+      text-decoration: none;
+    }
+  
+    .category-links:hover {
+      color: rgb(125, 125, 125);
+    }
+  }
+  

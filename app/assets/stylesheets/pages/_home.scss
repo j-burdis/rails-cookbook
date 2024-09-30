@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+
+.banner-home {
+    background-image: asset-url("ainsley.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    a:hover {
+      color: #afafaf;
+    }
+  }

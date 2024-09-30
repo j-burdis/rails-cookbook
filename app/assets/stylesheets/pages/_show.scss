@@ -1,0 +1,126 @@
+.recipe-links {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: rgb(25, 25, 25);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(125, 125, 125);
+  }
+
+  .btn-danger {
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: white;
+  
+    &:hover {
+      color: white;
+      background-color: rgb(160, 47, 47);
+    }
+  }
+}
+
+.container {
+  padding-top: 16px;
+
+  .recipe-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  .row {
+    margin-top: 20px;
+  }
+
+  .btn-success {
+    padding: 10px 20px;
+    background-color: #28a745;;
+    color: white;
+    border-radius: #ccc;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+}
+
+.recipe-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: center;
+}
+
+
+.card-recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.recipe-info,
+.recipe-extras {
+  margin: 0 8px;
+}
+
+.recipe-extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-danger {
+  border-radius: 5px;
+  padding: 4px 8px;
+  color: white;
+
+  &:hover {
+    color: white;
+    background-color: rgb(160, 47, 47);
+  }
+}
+
+@media (max-width: 575px) {
+  .recipe-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .recipe-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .recipe-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .recipe-cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
