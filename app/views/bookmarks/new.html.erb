@@ -1,3 +1,24 @@
-<h4>New bookmark</h4>
+<div class='navbar'>
+	<div><i class="fa-solid fa-kitchen-set" style="font-size: 30px"></i>
+	</div>
+	<div>
+		<%= link_to "My categories", root_path %>
+		<%= link_to "New category", new_category_path %>
+	</div>
+</div>
 
-<p></p>
+<div class='category-container'>
+  <h4 class="text-center">Add a recipe</h4>
+  <div class="row">
+    <div class="col-6 mx-auto" style="padding: 24px;">
+      <%= simple_form_for [@category, @bookmark] do |f| %>
+        <%= f.association :recipe %>
+        <%= f.input :comment %>
+        <%= f.button :submit, class: 'btn btn-success' %>
+      <% end %>
+      <div>
+        <%= link_to "Back to category", category_path(@category), class:"category-links" %>
+      </div>
+    </div>
+  </div>
+</div>

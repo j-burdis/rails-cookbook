@@ -1,10 +1,9 @@
 <div class='navbar'>
-	<div id='emoji'>
-	<%= "🧑🏻‍🍳" %>
+	<div><i class="fa-solid fa-kitchen-set" style="font-size: 30px"></i>
 	</div>
 	<div>
-		<%= link_to "My categories", categories_path %>
-		<%= link_to "New categories", new_category_path %>
+		<%= link_to "My categories", root_path %>
+		<%= link_to "New category", new_category_path %>
 	</div>
 </div>
 
@@ -14,7 +13,7 @@
 
 <div class='container'>
 	<div class='recipe-links'>
-		<%= link_to "Back to categories", categories_path %>
+		<%= link_to "Back to categories", root_path %>
 		<%= link_to "Delete category", category_path(@category), class: 'btn btn-danger',
       	data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
 	</div>
