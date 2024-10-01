@@ -3,12 +3,6 @@
 @import "new";
 @import "show";
 
-$new-list-btn-color: #ADA573;
-$new-list-btn-color-hover: #7F7140;
-$border-color: #ADA573;
-$border-radius: 5px;
-$padding: 15px;
-
 .cat-header{
   display: flex;
   justify-content: space-between;
@@ -20,94 +14,93 @@ $padding: 15px;
 }
 
 .card-category {
-    background-image: asset-url("ainsley.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a {
     color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  
-    a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-  
-    a:hover {
-      color: #afafaf;
-    }
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
 
+  a:hover {
+    color: #afafaf;
+  }
+}
+
 .container {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  
-    .content {
-      display: flex;
-      justify-content: space-between;
-    }
-  
-    .btn-container {
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-end;
-    }
-  
-    .btn-success {
-      padding: 10px 20px;
-      background-color: $new-list-btn-color;
-      border-color: $border-color;
-      color: white;
-      border-radius: $border-radius;
-      text-align: center;
-      text-decoration: none;
-  
-      &:hover {
-        background-color: $new-list-btn-color-hover;
-        border-color: $new-list-btn-color-hover;
-      }
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .btn-success {
+    padding: 10px 20px;
+    background-color: #ADA573;
+    border-color: #ADA573;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #7F7140;
+      border-color: #7F7140;
     }
   }
+}
   
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
   .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
+    grid-template-columns: 1fr;
   }
-  
-  @media (min-width: 100px) and (max-width: 575px) {
-    .cards {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
-  
-  @media (min-width: 576px) {
-    .cards {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  @media (min-width: 768px) {
-    .cards {
-      grid-template-columns: 1fr 1fr;
-    }
+}
+
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  @media (min-width: 992px) {
-    .cards {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  @media (min-width: 1200px) {
-    .cards {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+}
