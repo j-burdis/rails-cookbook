@@ -15,6 +15,12 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  perspective: 1000px;
+
+  &:hover {
+    scale: 1.05;
+    transition: 1s ease;
+  }
 
   p {
     width: 100%;
@@ -23,11 +29,13 @@
     a {
       color: rgb(253, 125, 211);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: transform 0.5s ease, color 0.3s ease;
+      display: inline-block;
     }
   
     a:hover {
       color: #eb2ecb;
+      transform: rotateX(360deg)
     }
   }
 

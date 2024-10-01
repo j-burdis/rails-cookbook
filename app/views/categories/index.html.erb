@@ -27,9 +27,12 @@
     <div class='col-12'>
       <div class="cards">
         <% @categories.each do |category| %>
-          <div class="card-category" style="background-image: url(<%= category.photo.attached? && category.photo.key.present? ? cl_image_path(category.photo.key) : asset_path('thoughtful-ainsley.jpg') %>)">
-            <%= link_to category.name, category_path(category) %>
-          </div>
+          <style>.card-category:hover{scale: 1.05; transition: 0.3s ease-in-out}</style>
+          <%= link_to category_path(category), class: "card-link" do %>
+            <div class="card-category" style="background-image: url(<%= category.photo.attached? && category.photo.key.present? ? cl_image_path(category.photo.key) : asset_path('thoughtful-ainsley.jpg') %>)">
+              <p><%= category.name %></p>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

@@ -26,14 +26,14 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
-  a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  a:hover {
+.card-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover p {
     color: #afafaf;
   }
 }
@@ -73,6 +73,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 16px;
+}
+
+.card-category:hover {
+  scale: 1.05;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
