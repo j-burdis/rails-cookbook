@@ -3,11 +3,21 @@
 @import "new";
 @import "show";
 
-$new-list-btn-color: #28a745;
-$new-list-btn-color-hover: #218838;
-$border-color: #ccc;
+$new-list-btn-color: #ADA573;
+$new-list-btn-color-hover: #7F7140;
+$border-color: #ADA573;
 $border-radius: 5px;
 $padding: 15px;
+
+.cat-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h4 {
+    margin-bottom: 0px;
+  }
+}
 
 .card-category {
     background-image: asset-url("ainsley.jpg");
@@ -52,6 +62,7 @@ $padding: 15px;
     .btn-success {
       padding: 10px 20px;
       background-color: $new-list-btn-color;
+      border-color: $border-color;
       color: white;
       border-radius: $border-radius;
       text-align: center;
@@ -59,6 +70,7 @@ $padding: 15px;
   
       &:hover {
         background-color: $new-list-btn-color-hover;
+        border-color: $new-list-btn-color-hover;
       }
     }
   }

@@ -10,7 +10,8 @@
   
     .btn-success {
       padding: 10px 20px;
-      background-color: #28a745;;
+      background-color: #ADA573;
+      border-color: #ADA573;
       color: white;
       border-radius: #ccc;
       text-align: center;
@@ -19,7 +20,8 @@
       width: 100%;
   
       &:hover {
-        background-color: #218838;
+        background-color: #7F7140;
+        background-color: #7F7140;
       }
     }
   
@@ -28,6 +30,7 @@
       justify-content: space-between;
       color: rgb(25, 25, 25);
       text-decoration: none;
+      margin-top: 8px;
     }
   
     .category-links:hover {

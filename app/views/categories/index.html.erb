@@ -2,7 +2,8 @@
 	<div><i class="fa-solid fa-kitchen-set" style="font-size: 30px"></i>
 	</div>
 	<div>
-		<%= link_to "My categories", root_path %>
+		<%= link_to "Home", root_path %>
+     | 
 		<%= link_to "New category", new_category_path %>
 	</div>
 </div>
@@ -13,21 +14,25 @@
 </div>
 
 <div class='container'>
-  <h4>Categories</h4>
+  <div class='cat-header'>
+    <div style='margin: 0 0'>
+      <h4>List of Categories</h4>
+    </div>
+    <div>
+      <%= link_to "New category", new_category_path, class: 'btn btn-success' %>
+    </div>
+  </div>
 
   <div class='row content'>
-    <div class='col-9'>
+    <div class='col-12'>
       <div class="cards">
         <% @categories.each do |category| %>
-          <div class="card-category" style="background-image: url(<%= asset_path('thoughtful-ainsley.jpg') %>)">
+          <div class="card-category" style="background-image: url(<%= category.photo.attached? && category.photo.key.present? ? cl_image_path(category.photo.key) : asset_path('thoughtful-ainsley.jpg') %>)">
             <%= link_to category.name, category_path(category) %>
           </div>
         <% end %>
       </div>
     </div>
-
-    <div class="col-3 btn-container">
-      <%= link_to "Create a category", new_category_path, class: 'btn btn-success' %>
-    </div>
+    
   </div>
 </div>

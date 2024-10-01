@@ -1,10 +1,12 @@
 .recipe-links {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   a {
     color: rgb(25, 25, 25);
     text-decoration: none;
+    margin-bottom: 0px;
   }
 
   a:hover {
@@ -12,13 +14,16 @@
   }
 
   .btn-danger {
+    background-color: rgb(250, 50, 50);
+    border-color: rgb(250, 50, 50);
     border-radius: 5px;
     padding: 4px 8px;
     color: white;
   
     &:hover {
       color: white;
-      background-color: rgb(160, 47, 47);
+      background-color: rgb(185, 65, 65);
+      border-color: rgb(185, 65, 65);
     }
   }
 }
@@ -40,18 +45,8 @@
   }
 
   .btn-success {
-    padding: 10px 20px;
-    background-color: #28a745;;
-    color: white;
-    border-radius: #ccc;
-    text-align: center;
-    text-decoration: none;
     display: block;
     width: 100%;
-
-    &:hover {
-      background-color: #218838;
-    }
   }
 }
 
@@ -91,13 +86,15 @@
 }
 
 .btn-danger {
+  background-color: rgb(250, 50, 50);
   border-radius: 5px;
   padding: 4px 8px;
   color: white;
 
   &:hover {
     color: white;
-    background-color: rgb(160, 47, 47);
+    background-color: rgb(185, 65, 65);
+    border-color: rgb(185, 65, 65);
   }
 }
 
