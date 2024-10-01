@@ -32,9 +32,19 @@
   color: white;
   text-decoration: none;
   transition: color 0.3s ease;
+  perspective: 1000px;
   
   &:hover p {
     color: #afafaf;
+  }
+
+  p {
+    transition: transform 0.5s ease, color 0.3s ease;
+    display: inline-block;
+  }
+
+  p:hover {
+    transform: rotateY(360deg)
   }
 }
 
