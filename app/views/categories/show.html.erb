@@ -28,10 +28,9 @@
 						<div class='recipe-info'>
 							<p><%= bookmark.recipe.name %></p>
 							<p><%= bookmark.recipe.description %></p>
-              <p>Rating: <%= bookmark.recipe.rating %>/10</p>
 						</div>
 						<div class='recipe-extras'>
-							<p> "<%= bookmark.comment %>"</p>
+							<p> <%= bookmark.comment %> </p>
 							<p><%= link_to "Delete", bookmark_path(bookmark), class: 'btn btn-danger',
 									data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
 						</div>
@@ -45,7 +44,7 @@
     <h4 class="text-center">Add a recipe</h4>
     <div class="col-6 mx-auto" style="padding: 24px;">
       <%= simple_form_for [@category, @bookmark] do |f| %>
-        <%= f.association :recipe %>
+        <%= f.association :recipe, collection: Recipe.where(category_name: @category.name), label_method: :name, value_method: :id %>
         <%= f.input :comment %>
         <%= f.button :submit, class: 'btn btn-success' %>
       <% end %>
